@@ -1,15 +1,10 @@
 def caesar_cipher(str, shift)
   res = ''
-  str.split('').each do |char|
-    if char.match?(/[[:alpha:]]/)
-      curCharNum = char.downcase.ord
-      newCharNum = curCharNum + shift
-      newCharNum -= 'z'.ord - curCharNum < shift ? 26 : 0
-      if char.ord <= 'Z'.ord
-        res += newCharNum.chr.upcase
-      else
-        res += newCharNum.chr
-      end
+  str.each_char do |char|
+    if char.match?(/[A-Z]/)
+      res += ((char.ord - 'A'.ord + shift) % 26 + 'A'.ord).chr
+    elsif char.match?(/[a-z]/)
+      res += ((char.ord - 'a'.ord + shift) % 26 + 'a'.ord).chr
     else
       res += char
     end
