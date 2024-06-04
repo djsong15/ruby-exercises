@@ -9,9 +9,13 @@ def substrings(string, dict)
         sub_i += 1
       else
         str_i += 1
+        sub_i = 0
+      end
+      if sub_i == substr.length
+        res[substr] += 1
+        sub_i = 0
       end
     end
-    sub_i == substr.length && res[substr] += 1
   end
   res
 end
