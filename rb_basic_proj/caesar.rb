@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def caesar_cipher(str, shift)
   res = ''
   str.each_char do |char|

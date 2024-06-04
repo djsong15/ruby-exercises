@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def stock_picker(stocks)
   max_prof = [0, nil, nil]
   min_price_i = 0

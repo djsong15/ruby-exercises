@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def substrings(string, dict)
   res = Hash.new(0)
   str = string.downcase.strip
